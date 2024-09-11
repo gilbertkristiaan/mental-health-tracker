@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-d$_n5zon(md^v%vhr_af_216d^$x=kbc!uosz=vk0w9s_30+av
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "gilbert-kristian-mentalhealthtrackertwo.pbp.cs.ui.ac.id"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "gilbert-kristian-mentalhealthtrackertri.pbp.cs.ui.ac.id"]
 
 
 # Application definition
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'mental_health_tracker.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,3 +122,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = ["http://localhost","http://127.0.0.1","http://gilbert-kristian-mentalhealthtrackertri.pbp.cs.ui.ac.id", "https://gilbert-kristian-mentalhealthtrackertri.pbp.cs.ui.ac.id"]
