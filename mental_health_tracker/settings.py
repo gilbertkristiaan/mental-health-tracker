@@ -73,7 +73,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'mental_health_tracker.wsgi.application'
 
 
-# Database
+## Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
