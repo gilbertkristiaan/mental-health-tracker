@@ -84,7 +84,7 @@ def show_json_by_id(request, id):
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
 
 
-### old_show_main:
+#### old_show_main:
     # mood_entries = MoodEntry.objects.all()
     # context = {
     #     'npm' : '2306274951',
