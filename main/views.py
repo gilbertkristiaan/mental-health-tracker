@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect 
+from django.shortcuts import render, redirect, reverse
 from main.forms import MoodEntryForm
 from main.models import MoodEntry
 from django.http import HttpResponse, HttpResponseRedirect
@@ -83,6 +83,28 @@ def show_json_by_id(request, id):
     data = MoodEntry.objects.filter(pk=id)
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
 
+def edit_mood(request, id):
+    # Get mood entry berdasarkan id
+    mood = MoodEntry.objects.get(pk = id)
+
+    # Set mood entry sebagai instance dari form
+    form = MoodEntryForm(request.POST or None, instance=mood)
+
+    if form.is_valid() and request.method == "POST":
+        # Simpan form dan kembali ke halaman awal
+        form.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+
+    context = {'form': form}
+    return render(request, "edit_mood.html", context)
+
+def delete_mood(request, id):
+    # Get mood berdasarkan id
+    mood = MoodEntry.objects.get(pk = id)
+    # Hapus mood
+    mood.delete()
+    # Kembali ke halaman awal
+    return HttpResponseRedirect(reverse('main:show_main'))
 
 #### old_show_main:
     # mood_entries = MoodEntry.objects.all()
