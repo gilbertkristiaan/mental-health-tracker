@@ -23,11 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-d$_n5zon(md^v%vhr_af_216d^$x=kbc!uosz=vk0w9s_30+av'
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 PRODUCTION = os.getenv("PRODUCTION", False)
 DEBUG = not PRODUCTION
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1","10.0.0.2","gilbert-kristian-mentalhealthtracker.pbp.cs.ui.ac.id"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "10.0.0.2", "gilbert-kristian-mentalhealthtracker.pbp.cs.ui.ac.id"]
 
 
 # Application definition
@@ -136,7 +137,6 @@ else:
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = ["http://localhost","http://127.0.0.1","http://gilbert-kristian-mentalhealthtracker.pbp.cs.ui.ac.id", "httpS://gilbert-kristian-mentalhealthtracker.pbp.cs.ui.ac.id"]
-
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 CSRF_COOKIE_SECURE = True
